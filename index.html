@@ -58,9 +58,14 @@
           <h1 class="hero__title" data-reveal>最好的妈妈</h1>
           <p class="hero__subtitle" data-reveal>2026.05.10</p>
 
-          <a class="scrollHint" href="#blessing" aria-label="向下滚动查看更多">
+          <button
+            id="btnScrollDown"
+            class="scrollHint"
+            type="button"
+            aria-label="向下滚动，查看更多妈妈的话"
+          >
             <span class="scrollHint__arrow" aria-hidden="true"></span>
-          </a>
+          </button>
         </div>
       </section>
 
@@ -74,106 +79,32 @@
             </header>
 
             <div class="card__body">
-              <!-- 可触发交互的祝福段落：点击/触摸会切换不同祝福文案 -->
-              <p id="blessingText" class="dropcap blessingText" tabindex="0" role="button" aria-label="点击切换祝福语">
-                妈妈，谢谢你把爱藏进每一次细心的叮咛里。愿你的每一天都被温柔以待，笑容像春日一样明亮。
-              </p>
+              <!-- 纯净版：固定祝福文案（静态展示） -->
+              <p id="blessingText" class="dropcap blessingText">
+                妈妈，母亲节快乐。
 
-              <div class="btnRow" role="group" aria-label="互动按钮">
-                <button id="btnNextBlessing" class="btn btn--primary" type="button">
-                  换一句更贴近心里的
-                </button>
-                <button id="btnScrollToMsg" class="btn btn--ghost" type="button">
-                  写给妈妈的话
-                </button>
-              </div>
+                谢谢你，在我选择考研的这段日子里，也在我一路长大的每一天，始终站在我身后。是你让我知道，无论走到哪里，我都有人理解，有人支撑。
+
+                请一定照顾好自己。别总把最好的都留给我，也要记得把温柔留给自己。愿岁月对你轻一点，再轻一点，愿你的笑容永远像春天那样明亮。
+
+                等我带着好消息，飞奔回你身边。
+
+                ——永远爱你
+              </p>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- 回忆相册（移动端水平滑动 / 桌面端 3 列网格） -->
-      <section class="section section--gallery" aria-label="回忆相册">
-        <div class="container">
-          <header class="section__header" data-reveal>
-            <h2 class="section__title">回忆相册</h2>
-            <p class="section__desc">把那些闪亮的小片段，轻轻收进心里。</p>
-          </header>
-
-          <p class="galleryHint" data-reveal>移动端提示：左右滑动查看更多</p>
-
-          <div class="gallery" data-reveal>
-            <!-- 占位“照片卡”：用渐变与 SVG 纹理模拟相片质感 -->
-            <article class="photoCard" aria-label="回忆一">
-              <div class="photoCard__img" aria-hidden="true"></div>
-              <p class="photoCard__cap">那天的风很轻，你的手很暖。</p>
-            </article>
-            <article class="photoCard" aria-label="回忆二">
-              <div class="photoCard__img photoCard__img--alt" aria-hidden="true"></div>
-              <p class="photoCard__cap">一碗热汤，盛着你无声的关心。</p>
-            </article>
-            <article class="photoCard" aria-label="回忆三">
-              <div class="photoCard__img photoCard__img--soft" aria-hidden="true"></div>
-              <p class="photoCard__cap">你的笑，是我最安心的方向。</p>
-            </article>
-            <article class="photoCard" aria-label="回忆四">
-              <div class="photoCard__img photoCard__img--gold" aria-hidden="true"></div>
-              <p class="photoCard__cap">岁月在走，爱一直在。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- 深情留言区 -->
-      <section id="messages" class="section section--messages" aria-label="写给妈妈的话">
-        <div class="container">
-          <header class="section__header" data-reveal>
-            <h2 class="section__title">写给妈妈的话</h2>
-            <p class="section__desc">把想说的，温柔地写下来。</p>
-          </header>
-
-          <div class="messagePanel" data-reveal>
-            <div class="btnRow btnRow--left" role="group" aria-label="留言操作">
-              <button id="btnToggleComposer" class="btn btn--primary" type="button">
-                写给妈妈的话
-              </button>
-              <button id="btnResetMessages" class="btn btn--ghost" type="button">
-                重置清空
-              </button>
-            </div>
-
-            <form id="messageForm" class="composer" aria-label="留言输入表单">
-              <label class="composer__label" for="messageInput">想对妈妈说：</label>
-              <textarea
-                id="messageInput"
-                class="composer__input"
-                rows="4"
-                maxlength="140"
-                placeholder="例如：妈妈，母亲节快乐！谢谢你一直在…"
-              ></textarea>
-              <div class="composer__actions">
-                <span class="composer__count" id="messageCount" aria-live="polite">0/140</span>
-                <button id="btnSubmitMessage" class="btn btn--primary" type="submit">
-                  送出这段温柔
-                </button>
-              </div>
-            </form>
-
-            <div id="messageList" class="messageList" aria-label="留言展示区"></div>
-          </div>
-        </div>
-      </section>
+      <!-- 纯净版：不再包含留言区 -->
     </main>
 
     <footer class="footer" role="contentinfo">
       <div class="footer__wave" aria-hidden="true"></div>
       <div class="container footer__inner">
         <p class="footer__text">
-          Made with love by <span class="footer__name">Your Name</span>
+          献给心爱的妈妈 <span class="footer__name">爱你的孩子</span>
         </p>
-        <a class="footer__link" href="https://pages.github.com/" target="_blank" rel="noreferrer">
-          GitHub Pages 部署指南
-        </a>
       </div>
     </footer>
 

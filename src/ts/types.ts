@@ -53,11 +53,9 @@ export interface ScrollColorShiftOptions {
 }
 
 export interface MessageBoardOptions {
-  toggleButtonId: string
   resetButtonId: string
   formId: string
   inputId: string
-  submitButtonId: string
   countId: string
   listId: string
   /** 最大字数（与 textarea maxlength 保持一致） */

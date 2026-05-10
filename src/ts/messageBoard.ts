@@ -1,58 +1,42 @@
 import type { MessageBoardOptions } from './types'
 
 /**
- * 留言功能：展开输入、提交后生成引文展示、支持单条删除与一键重置
+ * 留言功能（纯净版）：输入框始终可见；提交后生成引文展示，支持单条删除与一键重置
  * - 默认不会持久化到 localStorage（保持“纪念页”轻量与私密）
  */
 export class MessageBoard {
   private readonly opts: MessageBoardOptions
 
-  private readonly btnToggle: HTMLButtonElement
   private readonly btnReset: HTMLButtonElement
   private readonly form: HTMLFormElement
   private readonly input: HTMLTextAreaElement
   private readonly countEl: HTMLElement
   private readonly list: HTMLElement
 
-  private isOpen = false
-
   constructor(opts: MessageBoardOptions) {
     this.opts = opts
 
-    this.btnToggle = mustGet<HTMLButtonElement>(`#${opts.toggleButtonId}`)
     this.btnReset = mustGet<HTMLButtonElement>(`#${opts.resetButtonId}`)
     this.form = mustGet<HTMLFormElement>(`#${opts.formId}`)
     this.input = mustGet<HTMLTextAreaElement>(`#${opts.inputId}`)
     this.countEl = mustGet<HTMLElement>(`#${opts.countId}`)
     this.list = mustGet<HTMLElement>(`#${opts.listId}`)
 
-    this.onToggle = this.onToggle.bind(this)
     this.onReset = this.onReset.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
     this.onInput = this.onInput.bind(this)
 
-    this.btnToggle.addEventListener('click', this.onToggle)
     this.btnReset.addEventListener('click', this.onReset)
     this.form.addEventListener('submit', this.onSubmit)
     this.input.addEventListener('input', this.onInput)
 
     this.updateCount()
-    this.setOpen(false)
   }
 
   destroy(): void {
-    this.btnToggle.removeEventListener('click', this.onToggle)
     this.btnReset.removeEventListener('click', this.onReset)
     this.form.removeEventListener('submit', this.onSubmit)
     this.input.removeEventListener('input', this.onInput)
-  }
-
-  private onToggle(): void {
-    this.setOpen(!this.isOpen)
-    if (this.isOpen) {
-      // 延迟一帧，确保动画类已生效再聚焦
-      requestAnimationFrame(() => this.input.focus())
-    }
   }
 
   private onReset(): void {
@@ -79,12 +63,6 @@ export class MessageBoard {
     this.addQuote(text)
     this.input.value = ''
     this.updateCount()
-  }
-
-  private setOpen(open: boolean): void {
-    this.isOpen = open
-    this.form.classList.toggle('is-open', open)
-    this.btnToggle.setAttribute('aria-expanded', String(open))
   }
 
   private updateCount(): void {
