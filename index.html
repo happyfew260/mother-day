@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff4f6" />
+    <title>母亲节快乐 · 2026.05.10</title>
+
+    <!--
+      字体：草书签名 + 优雅衬线 + 英文装饰
+      说明：Google Fonts 在国内网络可能不可用；若加载失败将自动回退到系统字体。
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif+SC:wght@400;600&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta
+      name="description"
+      content="2026年5月10日 母亲节快乐：温柔、优雅、真挚的祝福静态网页。"
+    />
+    <script type="module" crossorigin src="./assets/index-6vAMv5KW.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DJu5lAek.css">
+  </head>
+
+  <body>
+    <!-- 背景氛围层：渐变光晕 + 微光粒子（CSS） -->
+    <div class="bg" aria-hidden="true">
+      <div class="bg__glow"></div>
+      <div class="bg__specks"></div>
+    </div>
+
+    <!-- 花瓣飘落层：由 TypeScript 生成 DOM 花瓣元素 -->
+    <div id="petals" class="petals" aria-hidden="true"></div>
+
+    <!-- 隐藏彩蛋：心率跳动小爱心 -->
+    <div class="easter-heart" aria-hidden="true" title="Love"></div>
+
+    <header class="topbar" role="banner">
+      <div class="topbar__inner">
+        <div class="brand" aria-label="母亲节快乐徽标">
+          <span class="brand__heart" aria-hidden="true">❤️</span>
+          <span class="brand__text">母亲节快乐</span>
+        </div>
+      </div>
+      <div class="topbar__divider" aria-hidden="true"></div>
+    </header>
+
+    <main id="app" class="app" role="main">
+      <!-- 首屏英雄区 -->
+      <section class="hero" aria-label="母亲节首屏祝福">
+        <div class="hero__inner">
+          <p class="hero__dateBadge" data-reveal>
+            <span class="hero__dateBadgeStrong">2026年5月10日</span>
+            <span class="hero__dateBadgeLight">母亲节</span>
+          </p>
+
+          <h1 class="hero__title" data-reveal>最好的妈妈</h1>
+          <p class="hero__subtitle" data-reveal>2026.05.10</p>
+
+          <a class="scrollHint" href="#blessing" aria-label="向下滚动查看更多">
+            <span class="scrollHint__arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 祝福卡片区 -->
+      <section id="blessing" class="section section--blessing" aria-label="祝福卡片">
+        <div class="container">
+          <article class="card card--blessing" data-reveal>
+            <header class="card__header">
+              <h2 class="card__title">给妈妈的一封小信</h2>
+              <p class="card__meta">温柔与坚韧，是你把日子照亮。</p>
+            </header>
+
+            <div class="card__body">
+              <!-- 可触发交互的祝福段落：点击/触摸会切换不同祝福文案 -->
+              <p id="blessingText" class="dropcap blessingText" tabindex="0" role="button" aria-label="点击切换祝福语">
+                妈妈，谢谢你把爱藏进每一次细心的叮咛里。愿你的每一天都被温柔以待，笑容像春日一样明亮。
+              </p>
+
+              <div class="btnRow" role="group" aria-label="互动按钮">
+                <button id="btnNextBlessing" class="btn btn--primary" type="button">
+                  换一句更贴近心里的
+                </button>
+                <button id="btnScrollToMsg" class="btn btn--ghost" type="button">
+                  写给妈妈的话
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 回忆相册（移动端水平滑动 / 桌面端 3 列网格） -->
+      <section class="section section--gallery" aria-label="回忆相册">
+        <div class="container">
+          <header class="section__header" data-reveal>
+            <h2 class="section__title">回忆相册</h2>
+            <p class="section__desc">把那些闪亮的小片段，轻轻收进心里。</p>
+          </header>
+
+          <p class="galleryHint" data-reveal>移动端提示：左右滑动查看更多</p>
+
+          <div class="gallery" data-reveal>
+            <!-- 占位“照片卡”：用渐变与 SVG 纹理模拟相片质感 -->
+            <article class="photoCard" aria-label="回忆一">
+              <div class="photoCard__img" aria-hidden="true"></div>
+              <p class="photoCard__cap">那天的风很轻，你的手很暖。</p>
+            </article>
+            <article class="photoCard" aria-label="回忆二">
+              <div class="photoCard__img photoCard__img--alt" aria-hidden="true"></div>
+              <p class="photoCard__cap">一碗热汤，盛着你无声的关心。</p>
+            </article>
+            <article class="photoCard" aria-label="回忆三">
+              <div class="photoCard__img photoCard__img--soft" aria-hidden="true"></div>
+              <p class="photoCard__cap">你的笑，是我最安心的方向。</p>
+            </article>
+            <article class="photoCard" aria-label="回忆四">
+              <div class="photoCard__img photoCard__img--gold" aria-hidden="true"></div>
+              <p class="photoCard__cap">岁月在走，爱一直在。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 深情留言区 -->
+      <section id="messages" class="section section--messages" aria-label="写给妈妈的话">
+        <div class="container">
+          <header class="section__header" data-reveal>
+            <h2 class="section__title">写给妈妈的话</h2>
+            <p class="section__desc">把想说的，温柔地写下来。</p>
+          </header>
+
+          <div class="messagePanel" data-reveal>
+            <div class="btnRow btnRow--left" role="group" aria-label="留言操作">
+              <button id="btnToggleComposer" class="btn btn--primary" type="button">
+                写给妈妈的话
+              </button>
+              <button id="btnResetMessages" class="btn btn--ghost" type="button">
+                重置清空
+              </button>
+            </div>
+
+            <form id="messageForm" class="composer" aria-label="留言输入表单">
+              <label class="composer__label" for="messageInput">想对妈妈说：</label>
+              <textarea
+                id="messageInput"
+                class="composer__input"
+                rows="4"
+                maxlength="140"
+                placeholder="例如：妈妈，母亲节快乐！谢谢你一直在…"
+              ></textarea>
+              <div class="composer__actions">
+                <span class="composer__count" id="messageCount" aria-live="polite">0/140</span>
+                <button id="btnSubmitMessage" class="btn btn--primary" type="submit">
+                  送出这段温柔
+                </button>
+              </div>
+            </form>
+
+            <div id="messageList" class="messageList" aria-label="留言展示区"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer__wave" aria-hidden="true"></div>
+      <div class="container footer__inner">
+        <p class="footer__text">
+          Made with love by <span class="footer__name">Your Name</span>
+        </p>
+        <a class="footer__link" href="https://pages.github.com/" target="_blank" rel="noreferrer">
+          GitHub Pages 部署指南
+        </a>
+      </div>
+    </footer>
+
+    <!-- Vite 入口：TypeScript（严格模式） -->
+  </body>
+</html>
